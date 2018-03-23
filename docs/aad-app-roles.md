@@ -14,7 +14,7 @@ You can read much more about this topic [here](https://www.microsoftpressstore.c
 
 1. Assuming you have access to the App Registration, go to the  **Settings** blade for the your App Registraiton.
 2. Click **Manifest** > **Edit**.
-3. Add the following JSON to the `appRoles` element. Generate new GUIDs for the `id` properties.
+3. Add the following JSON to the `appRoles` element. [Generate new GUIDs](https://www.guidgenerator.com/online-guid-generator.aspx) for the `id` properties.
 
     ```json
     {
