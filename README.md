@@ -1,4 +1,4 @@
-# development
+# Development at the CDMC
 General documentation for development best practices at the DMC
 
 ## GitHub Templates
