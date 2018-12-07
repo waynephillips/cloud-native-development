@@ -5,10 +5,10 @@ This page provides a high level overview of the general project software develop
 
 ## Roles
 The following roles are discussed in this document:
-- AS – 
-- Operations team (Ops) – Operations team
-- Development team (Dev) – Developer team
-- Embedded security - 
+- AS – Architecture Specialist
+- Ops team - Operations team
+- Dev team - Development team
+- Embedded Security Specialist
 
 ## Project Workflow
 ![Software Development Phases](images/software-dev-phases.png)
