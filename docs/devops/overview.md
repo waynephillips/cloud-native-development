@@ -5,13 +5,13 @@ This page provides a high level overview of the general project software develop
 
 ## Roles
 The following roles are discussed in this document:
-- AS – 
-- Operations team (Ops) – Operations team
-- Development team (Dev) – Developer team
+- AS â€“ 
+- Operations team (Ops) â€“ Operations team
+- Development team (Dev) â€“ Developer team
 - Embedded security - 
 
 ## Project Workflow
-[[/docs/devops/images/software-dev-phases.png|alt=Software Development Phases]]
+[[ https://github.com/Dow/development/blob/devops-docs/docs/devops/images/software-dev-phases.png | height = 100px ]]
 ### Business requirements
 - AS defines product requirements with business partner
 
@@ -86,15 +86,15 @@ Note the difference between post-approval performed by AS in the Test stage and 
 ### Tools in Use
 
 #### Primary Technology stack
-- Azure cloud (PaaS) – Cloud
-- Azure Active Directory – Identity and Access Management
-- .NET and .NET Core – Software framework
-- Entity Framework and Entity Framework Core – ORM framework
+- Azure cloud (PaaS) â€“ Cloud
+- Azure Active Directory â€“ Identity and Access Management
+- .NET and .NET Core â€“ Software framework
+- Entity Framework and Entity Framework Core â€“ ORM framework
 #### DevOps Tools
-- Azure DevOps – Delivery management and orchestration, CI/CD
-- Checkmarx – Static code scan analysis
-- Azure ARM templates – IaC
-- Powershell – IaC and CaC
+- Azure DevOps â€“ Delivery management and orchestration, CI/CD
+- Checkmarx â€“ Static code scan analysis
+- Azure ARM templates â€“ IaC
+- Powershell â€“ IaC and CaC
 
 ## Security
  
