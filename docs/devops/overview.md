@@ -57,7 +57,9 @@ Continuous delivery is a series of practices designed to ensure that code can be
 The following diagram describes the application delivery workflow:
  
 In the Continuous Integration (CI) phase, a developer applies changes to the code base on a feature branch and initiates a pull request (PR). Code validation and testing is triggered automatically as part of the PR. Merging to the Master branch kicks off further validation and testing and eventually the publishing step. It is recommended that one create a PR early in the development process so that others can provide timely feedback on the implementation.
+
 The Continuous Delivery (CD) phase is automatically triggered after the publishing step from CI is complete. The code package is first deployed to a Development (Dev) environment. The development team can send the code update further to the Test environment once the application state is ready for review by the AS and typically one or more business partners. Once the AS and the Ops team approve the changes present in Test, the changes are automatically deployed to production.
+
 Note that a project repository includes not only the application code but also all necessary infrastructure configurations by leveraging Infrastructure as Code (IaC). More on this in the Infrastructure as Code section.
 
 ### Infrastructure as Code
@@ -68,12 +70,15 @@ The following integration pipeline is used for publishing IaC templates:
  
 #### Application Repository
 Application projects often need custom modifications and updates in infrastructure configuration. In order to enable for this scenario, project-specific configurations are stored in the application repository in the form of scripts.
-All Together: CI/CD and IaC
+
+#### All Together: CI/CD and IaC
 The following diagram illustrates the CI/CD workflow combined with IaC:
  
 Note the two different version control sources. The app repository includes both the application code base and Configuration-as-Code (CaC) scripts. The list of IaC templates in use is defined in an Azure DevOps release pipeline along with any other deployment steps. The CD pipeline is the same as the one introduced in the Application Delivery Pipeline section.
+
 To combine different infrastructure templates and thereby define custom infrastructure setups (cloud architectures), Azure DevOps is used as a tool. Leveraging Azure DevOps, one can quickly define the right combination of IaC templates.
-More on Approval Steps
+
+#### More on Approval Steps
 The following workflow describes the approval process in more detail:
  
 Note the difference between post-approval performed by AS in the Test stage and the pre-approval done by the Ops team before deploying to production. 
