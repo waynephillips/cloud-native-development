@@ -35,8 +35,8 @@ The project setup phase typically takes place in Sprint 0 and typically includes
 The software development process is described in the following diagram:
 ![Software Development Cycle](images/software-dev-cycle.png)
 
-In addition to the software development activities described above, the following ongoing processes happen during the Development Phase:
-- Risk assessment (Typical duration: weeks)
+In addition to the software development activities described above, the following ongoing processes take place during the Development Phase:
+- Risk assessment and validation (Typical duration: weeks)
 - Refinements in infrastructure configurations using IaC
 
 ### Production Support
