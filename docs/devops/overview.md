@@ -2,7 +2,8 @@
 
 ## Introduction
 This page provides a high level overview of the general project software development workflow in place for the Chicago DMC. In addition, it describes the DevOps-related processes and tools used for software development.
-Roles
+
+## Roles
 The following roles are discussed in this document:
 - AS – 
 - Operations team (Ops) – Operations team
