@@ -6,7 +6,7 @@ This page provides a high level overview of the general project software develop
 ## Roles
 The following list summarizes the different teams and roles that occur in this document:
 - AS – Architecture Specialist
-- Ops team - Operations team
+- Ops team - Operations/Platform team
 - Dev team - Development team
 - Lead developer
 - Embedded Security Specialist
