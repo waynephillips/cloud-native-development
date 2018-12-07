@@ -11,7 +11,7 @@ The following roles are discussed in this document:
 - Embedded security - 
 
 ## Project Workflow
-[[/images/software-dev-phases.png|alt=Software Development Phases]]
+[[/docs/devops/images/software-dev-phases.png|alt=Software Development Phases]]
 ### Business requirements
 - AS defines product requirements with business partner
 
