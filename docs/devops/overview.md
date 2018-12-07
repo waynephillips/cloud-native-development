@@ -117,7 +117,7 @@ An Embedded Security Specialist has full owner-level access to the subscription 
 ### Access to Environments
 The chart below shows the access given to different roles in the context of environments:
 ![Access Overview 2](images/access-overview-02.png)
-Note that developers have elevated access in Dev environment to ensure fast-paced debugging and troubleshooting. In Test and Prod This implies a requirement for discipline from any Dev team though such that they solidify changes by updating IaC definitions and/or application code once a problem has been resolved. This is a necessary step as the only way to apply the same changes in any environment other than Dev and Sandbox is to deploy updates through the DevOps pipeline. This strategy ensures consistency across environments while also giving Dev teams the flexibility to find the right solution to any problem quickly.
+Note that developers have elevated access in Dev environment to ensure fast-paced debugging and troubleshooting. This implies a need for discipline from any Dev team such that they solidify changes by updating IaC definitions and/or application code in the project repository once a problem has been resolved. This is a necessary step as the only way to apply the same changes in any environment other than Dev and Sandbox is to push updates through the DevOps pipeline. This strategy ensures consistency across environments while also giving Dev teams the flexibility to find the right solution to any problem within a reseasonable time.
 
 
 ### Access
