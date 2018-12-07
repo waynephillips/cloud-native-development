@@ -55,6 +55,16 @@ Continuous Integration (CI) is a development practice that requires developers t
 #### Continuous Delivery
 Continuous delivery is a series of practices designed to ensure that code can be rapidly and safely deployed to production by delivering every change to a production-like environment and ensuring business applications and services function as expected through automated testing. Since every change is delivered to a staging environment using complete automation, you can have confidence the application can be deployed to production with a push of a button when the business is ready.
 
+### Environments
+![Environments](images/environments.png)
+A Sandbox environment is not part of any official DevOps pipeline and is used only for Proof of Concepts (PoC) and experimental purposes.
+
+A Dev environment is used as the first stage in the DevOps delivery pipeline and serves as a testing environment for Dev teams.
+
+A Test environment is used to review implementations with stakeholders and business partners.
+
+A Prod environment is where the live application lives.
+
 ### Application Delivery Pipeline
 The following diagram describes the application delivery workflow:
 ![Application Delivery Pipeline](images/app-delivery-pipeline.png)
