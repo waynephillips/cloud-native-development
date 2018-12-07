@@ -57,6 +57,7 @@ Continuous delivery is a series of practices designed to ensure that code can be
 
 ### Environments
 ![Environments](images/environments.png)
+
 A Sandbox environment is not part of any official DevOps pipeline and is used only for Proof of Concepts (PoC) and experimental purposes.
 
 A Dev environment is used as the first stage in the DevOps delivery pipeline and serves as a testing environment for Dev teams.
