@@ -66,7 +66,7 @@ A Test environment is used to review implementations with stakeholders and busin
 
 A Prod environment is where the live application lives.
 
-Dev, Test and Prod environments typically have the same configurations, ensuring consistency across environment and reducing the number of failed deployments in Prod.
+Dev, Test and Prod environments typically have the same configurations, ensuring consistency across environments and thereby increasing the number of successful deployments.
 
 ### Application Delivery Pipeline
 The following diagram describes the application delivery workflow:
