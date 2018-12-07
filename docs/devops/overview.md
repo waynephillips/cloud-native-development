@@ -5,13 +5,13 @@ This page provides a high level overview of the general project software develop
 
 ## Roles
 The following roles are discussed in this document:
-- AS – 
-- Operations team (Ops) – Operations team
-- Development team (Dev) – Developer team
+- AS â€“ 
+- Operations team (Ops) â€“ Operations team
+- Development team (Dev) â€“ Developer team
 - Embedded security - 
 
 ## Project Workflow
-[[/docs/devops/images/software-dev-phases.png|alt=Software Development Phases]]
+![Software Development Phases](images/software-dev-phases.png)
 ### Business requirements
 - AS defines product requirements with business partner
 
@@ -32,7 +32,8 @@ The project setup phase typically takes place in Sprint 0 and typically includes
 
 ### Development Phase
 The software development process is described in the following diagram:
- 
+![Software Development Cycle](images/software-dev-cycle.png)
+
 In addition to the software development activities described above, the following ongoing processes happen during the Development Phase:
 - Risk assessment (Typical duration: weeks)
 - Refinements in infrastructure configurations using IaC
@@ -55,6 +56,7 @@ Continuous delivery is a series of practices designed to ensure that code can be
 
 ### Application Delivery Pipeline
 The following diagram describes the application delivery workflow:
+![Application Delivery Pipeline](images/app-delivery-pipeline.png)
  
 In the Continuous Integration (CI) phase, a developer applies changes to the code base on a feature branch and initiates a pull request (PR). Code validation and testing is triggered automatically as part of the PR. Merging to the Master branch kicks off further validation and testing and eventually the publishing step. It is recommended that one create a PR early in the development process so that others can provide timely feedback on the implementation.
 
@@ -67,35 +69,39 @@ Note that a project repository includes not only the application code but also a
 #### Resource Library
 In order to ensure reusability and consistency across environments and projects, Infrastructure as Code (IaC) is used for environment creation and modification. Furthermore, in order to simplify the provisioning of new cloud resources and provide default configurations, infrastructure templates are available in a centralized repository, called the Resource Library (RL). This a version control repository where IaC templates are stored. The templates are primarily developed and provided by the Ops team and go through rigorous infrastructure testing before making them available for use to development teams.
 The following integration pipeline is used for publishing IaC templates:
+![IaC Build Process](images/iac-build-process.png)
  
 #### Application Repository
 Application projects often need custom modifications and updates in infrastructure configuration. In order to enable for this scenario, project-specific configurations are stored in the application repository in the form of scripts.
 
 #### All Together: CI/CD and IaC
 The following diagram illustrates the CI/CD workflow combined with IaC:
- 
+![CI/CD with IaC](images/ci-cd-iac.png)
+
 Note the two different version control sources. The app repository includes both the application code base and Configuration-as-Code (CaC) scripts. The list of IaC templates in use is defined in an Azure DevOps release pipeline along with any other deployment steps. The CD pipeline is the same as the one introduced in the Application Delivery Pipeline section.
 
 To combine different infrastructure templates and thereby define custom infrastructure setups (cloud architectures), Azure DevOps is used as a tool. Leveraging Azure DevOps, one can quickly define the right combination of IaC templates.
 
 #### More on Approval Steps
 The following workflow describes the approval process in more detail:
- 
+![Approval Steps](images/approval-stages.png)
+
 Note the difference between post-approval performed by AS in the Test stage and the pre-approval done by the Ops team before deploying to production. 
 
 ### Tools in Use
 
 #### Primary Technology stack
-- Azure cloud (PaaS) – Cloud
-- Azure Active Directory – Identity and Access Management
-- .NET and .NET Core – Software framework
-- Entity Framework and Entity Framework Core – ORM framework
+- Azure cloud (PaaS) â€“ Cloud
+- Azure Active Directory â€“ Identity and Access Management
+- .NET and .NET Core â€“ Software framework
+- Entity Framework and Entity Framework Core â€“ ORM framework
 #### DevOps Tools
-- Azure DevOps – Delivery management and orchestration, CI/CD
-- Checkmarx – Static code scan analysis
-- Azure ARM templates – IaC
-- Powershell – IaC and CaC
+- Azure DevOps â€“ Delivery management and orchestration, CI/CD
+- Checkmarx â€“ Static code scan analysis
+- Azure ARM templates â€“ IaC
+- Powershell â€“ IaC and CaC
 
 ## Security
- 
+![Access Overview](images/access-overview.png)
+![Access Overview 2](images/access-overview-02.png)
 ### Access
