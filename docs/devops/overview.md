@@ -4,10 +4,11 @@
 This page provides a high level overview of the general project software development workflow in place for the Chicago DMC. In addition, it describes the DevOps-related processes and tools used for software development.
 
 ## Roles
-The following roles are discussed in this document:
+The following list summarizes the different teams and roles that occur in this document:
 - AS – Architecture Specialist
 - Ops team - Operations team
 - Dev team - Development team
+- Lead developer
 - Embedded Security Specialist
 
 ## Project Workflow
@@ -96,12 +97,27 @@ Note the difference between post-approval performed by AS in the Test stage and 
 - .NET and .NET Core – Software framework
 - Entity Framework and Entity Framework Core – ORM framework
 #### DevOps Tools
-- Azure DevOps – Delivery management and orchestration, CI/CD
-- Checkmarx – Static code scan analysis
+- Azure DevOps – Automation Management Tool, CI/CD
+- Checkmarx – Static Code Scan Analysis
 - Azure ARM templates – IaC
 - Powershell – IaC and CaC
 
 ## Security
+### DevOps Security
+The following workflow shows the basic DevOps workflow in a security context:
 ![Access Overview](images/access-overview.png)
+Dev teams have read-level access to cloud resources by default. In Dev environments, a Dev team has additional contributor-level access to cloud resources. A contributor can apply any modifications on the cloud resource directly from a local workstation. Note that the contributor access in Dev is given on the resource level. Consequently, a developer cannot add or delete resources in the cloud resource group or remove the entire resource group itself.
+
+Ops team has full contributor access on the cloud subscription level.
+
+Both Dev and Ops teams have access to the automation management tool (Azure DevOps). Every change in configuration or code needs to go through the DevOps pipeline. 
+
+An Embedded Security Specialist has full owner-level access to the subscription (not shown in the diagram) who can grant others access to cloud resources.
+
+### Access to Environments
+The chart below shows the access given to different roles in the context of environments:
 ![Access Overview 2](images/access-overview-02.png)
+Note that developers have elevated access in Dev environment to ensure fast-paced debugging and troubleshooting. In Test and Prod This implies a requirement for discipline from any Dev team though such that they solidify changes by updating IaC definitions and/or application code once a problem has been resolved. This is a necessary step as the only way to apply the same changes in any environment other than Dev and Sandbox is to deploy updates through the DevOps pipeline. This strategy ensures consistency across environments while also giving Dev teams the flexibility to find the right solution to any problem quickly.
+
+
 ### Access
