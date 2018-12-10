@@ -20,8 +20,8 @@ The following list summarizes the different teams and roles that occur in this d
 - Initial sprint and capacity planning
 - Architectural design review
 
-### Project Setup Phase
-The project setup phase typically takes place in Sprint 0 and typically includes the following major steps
+### Project Startup Phase
+The project startup phase typically takes place in Sprint 0 and typically includes the following major steps
 - Create project repository
 - Provision and configure cloud resources using Infrastructure as Code (IaC)
 - Set up build and release pipelines using Continuous Integration (CI) and Continuous Delivery (CD)
