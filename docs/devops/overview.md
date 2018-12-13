@@ -46,7 +46,7 @@ TBD
 
 ### Definitions
 
-#### DevOps
+#### [DevOps](#devops)
 DevOps is the union of people, process, and tools to enable continuous delivery of value to our end users. 
 
 #### Continuous Integration
