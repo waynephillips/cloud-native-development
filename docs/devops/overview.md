@@ -9,7 +9,7 @@ The following list summarizes the different teams and roles that occur in this d
 - Ops team - Operations/Platform team
 - Dev team - Development team
 - Lead developer
-- Embedded Security Specialist
+- Security Solutions Specialist (embedded security specialist)
 
 ## Project Workflow
 ![Software Development Phases](images/software-dev-phases.png)
@@ -125,7 +125,7 @@ Ops team has full contributor access on the cloud subscription level.
 
 Both Dev and Ops teams have access to the automation management tool (Azure DevOps). Every change in configuration or code needs to go through the DevOps pipeline. 
 
-An Embedded Security Specialist has full owner-level access to the subscription (not shown in the diagram) who can grant others access to cloud resources.
+A Security Solutions Specialist has full owner-level access to the subscription (not shown in the diagram) who can grant others access to cloud resources.
 
 ### Access to Environments
 The chart below shows the access given to different roles in the context of environments:
