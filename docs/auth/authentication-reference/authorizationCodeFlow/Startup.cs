@@ -17,7 +17,7 @@ namespace authorizationCodeFlow
     {
         private readonly string TenantName = "TXu4dow.onmicrosoft.com";
         private readonly string ClientId = "b93f9575-17ec-44d2-8db0-befa0cab7888";
-        private readonly string ClientSecret = "TGdI4TQ/4MFq7vFWJ/spB+q4n4TA1KAGgZeiL3DPIgk=";
+        private readonly string ClientSecret = "<clientsecret>";
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
