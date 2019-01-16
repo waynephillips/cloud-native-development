@@ -12,6 +12,7 @@ The following list summarizes the different teams and roles that occur in this d
 - Dev team - Development team
 - Lead developer
 - Security Solution Specialist - Security expert embedded at a specific DMC location
+- TCS Support Team
 
 ## Project Workflow
 ![Software Development Phases](images/devops-overview/software-dev-phases.png)
@@ -111,7 +112,7 @@ Note the difference between post-approval performed by AS in the Test stage and 
 #### Primary Technology Stack
 - Azure cloud (PaaS) – Cloud
 - Azure Active Directory – Identity and Access Management
-- .NET and .NET Core – Software framework
+- .NET Core (preferred) and .NET – Software framework
 - Entity Framework and Entity Framework Core – ORM framework
 #### DevOps Tools
 - Azure DevOps – Automation Management Tool, CI/CD
