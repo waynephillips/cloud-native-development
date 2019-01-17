@@ -12,7 +12,6 @@ The following list summarizes the different teams and roles that occur in this d
 - Dev team - Development team
 - Lead developer
 - Security Solution Specialist - Security expert embedded at a specific DMC location
-- TCS Support Team
 
 ## Project Workflow
 ![Software Development Phases](images/devops-overview/software-dev-phases.png)
@@ -125,11 +124,11 @@ Note the difference between post-approval performed by AS in the Test stage and 
 ### DevOps Security
 The following workflow shows the basic DevOps workflow in a security context:
 ![Access Overview](images/devops-overview/access-overview.png)
-Dev teams have read-level access to cloud resources by default. In Dev environments, a Dev team has additional contributor-level access to cloud resources. A contributor can apply any modifications on the cloud resource directly from a local workstation. Note that the contributor access in Dev is given on the resource level. Consequently, a developer cannot add or delete resources in the cloud resource group or remove the entire resource group itself.
+Dev teams have read-level access to cloud resources and resource groups by default. In Dev environments, a Dev team has restricted contributor-level access to cloud resources. A contributor can apply any modifications on the cloud resource directly from a local workstation using the Azure portal or other tools. This contributor access is restricted in a way such that developers cannot add or delete resources in a cloud resource group or remove the entire resource group itself. The creation or deletion of resources is supported through the CI/CD automation pipeline using IaC.
 
-The Platform team has full contributor access on the cloud subscription level.
+The Platform team has full contributor access on the cloud subscription level (including resource creation and deletion).
 
-Both Dev and Platform teams have access to the automation management tool (Azure DevOps). Every change in configuration or code needs to go through the complete DevOps pipeline to release to production. 
+Both Dev and Platform teams have access to the automation management tool (Azure DevOps). Every change in configuration or code needs to go through the complete DevOps pipeline to release to production.
 
 ### Access to Environments
 The chart below shows the access given to different roles in the context of environments:
