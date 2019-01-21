@@ -68,7 +68,7 @@ The software development process is described in the following diagram:
 ![Software Development Cycle](images/devops-overview/software-dev-cycle.png)
 
 ### Production Support
-Handled by TCS Support team
+Primarily handled by TCS Support team
 
 ## DevOps
 
