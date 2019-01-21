@@ -11,7 +11,7 @@ The following list summarizes the different teams and roles that occur in this d
     - Manages appropriate tasks/deliverables for the project
     - Manages product reviews with stakeholders
 - Platform team - Cloud operations team
-    - Provides dev teams with guidance for DevOps, automation and cloud infrastructure
+    - Assists dev teams with DevOps, automation and cloud infrastructure
     - Primary contributor to developing and maintaining DevOps cloud infrastructure templates and automation tools
     - Final approver prior to Production deployments in Continuous Delivery Pipeline
 - Lead developer
@@ -21,7 +21,7 @@ The following list summarizes the different teams and roles that occur in this d
 - Dev team - Development team
     - Develop features laid out in a sprint
     - Update AS and Lead developer on progress in stand up meetings
-    - Empowered to provision resources and manage builds/deployments using DevOps automation processes
+    - Empowered to provision resources and manage builds/deployments using DevOps automation
 - DMC Tech Architecture team
     - Assists with architecture reviews and guidance for solution designs
     - Reviews supported infrastructure and DevOps automation components on a regular basis
