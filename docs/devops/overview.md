@@ -8,10 +8,28 @@ For more information on the actual implementation of the different items describ
 ## Roles
 The following list summarizes the different teams and roles that occur in this document:
 - AS – Architecture Specialist
-- Platform team - Cloud Operations team
-- Dev team - Development team
+    - Manages appropriate tasks/deliverables for the project
+    - Manages product reviews with stakeholders
+- Platform team - Cloud operations team
+    - Provides dev teams with guidance for DevOps, automation and cloud infrastructure
+    - Primary contributor to developing and maintaining DevOps cloud infrastructure templates and automation tools
+    - Final approver prior to Production deployments in Continuous Delivery Pipeline
 - Lead developer
+    - Manages appropriate tasks/deliverables for the project
+    - Oversees delivery of project backlog items
+- Dev team - Development team
+    - Develop features laid out in a sprint
+    - Update AS and Lead developer on progress in stand up meetings
+    - Empowered to provision resources and manage builds/deployments using DevOps automation processes
+- DMC Tech Architecture team
+    - Assists with architecture reviews and guidance for solution designs
+    - Reviews supported infrastructure and DevOps automation components on a regular basis
+    - Members: Lead developers, Architecture Specialists, Platform team
 - Security Solution Specialist - Security expert embedded at a specific DMC location
+    - Assists teams with security-related project deliverables, such as Security Risk Management process, Risk Profile meeting, etc.
+    - Ensures appropriate access level for team members, applications, automation tools, etc.
+- TCS Support team - Tata Consulting Services support team
+    - Handles production support in general
 
 ## Project Workflow
 ![Software Development Phases](images/devops-overview/software-dev-phases.png)
