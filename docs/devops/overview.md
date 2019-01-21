@@ -10,7 +10,8 @@ The following list summarizes the different teams and roles that occur in this d
 - AS – Architecture Specialist
     - Manages appropriate tasks/deliverables for the project
     - Manages product reviews with stakeholders
-- Platform team - Cloud operations team
+- Platform team
+    - Oversees cloud operations and DevOps automation
     - Assists dev teams with DevOps, automation and cloud infrastructure
     - Primary contributor to developing and maintaining DevOps cloud infrastructure templates and automation tools
     - Final approver prior to Production deployments in Continuous Delivery Pipeline
@@ -18,7 +19,8 @@ The following list summarizes the different teams and roles that occur in this d
     - Manages appropriate tasks/deliverables for the project
     - Oversees delivery of features being developed in a sprint
     - Other responsibilities listed for Dev team
-- Dev team - Development team
+- Dev team
+    - Development team
     - Develop features laid out in a sprint
     - Update AS and Lead developer on progress in stand up meetings
     - Empowered to provision resources and manage builds/deployments using DevOps automation
