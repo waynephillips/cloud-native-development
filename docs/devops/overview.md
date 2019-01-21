@@ -24,7 +24,7 @@ The following list summarizes the different teams and roles that occur in this d
     - Empowered to provision resources and manage builds/deployments using DevOps automation
 - DMC Tech Architecture team
     - Assists with architecture reviews and guidance for solution designs
-    - Reviews supported infrastructure and DevOps automation components on a regular basis
+    - Reviews targeted frameworks, supported automation tools and cloud infrastructure components on a regular basis and makes decision on adding new ones
     - Members: Lead developers, Architecture Specialists, Platform team
 - Security Solution Specialist - Security expert embedded at a specific DMC location
     - Assists teams with security-related project deliverables, such as Security Risk Management process, Risk Profile meeting, etc.
@@ -38,8 +38,11 @@ The following list summarizes the different teams and roles that occur in this d
 - AS defines product requirements with business partner
 
 ### Project Planning
+- Project is shaped and assigned to the appropriate AS and Lead Developer/Team
 - Architecture Canvas and Technical Design reviews
 - Initial sprint and capacity planning
+
+Teams should not be starting any “meaningful” development, including provisioning cloud resources, before reviewing and executing these processes. Testing/evaluating a project's design in an Azure sandbox environment is acceptable and encouraged.
 
 ### Project Startup Phase
 The project startup phase typically takes place in Sprint 0. This phase typically includes the following steps:
