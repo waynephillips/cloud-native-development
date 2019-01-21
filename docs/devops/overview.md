@@ -109,7 +109,7 @@ Note that a project repository includes not only the application code but also a
 ### Infrastructure as Code
 
 #### Resource Library
-In order to ensure reusability and consistency across environments and projects, Infrastructure as Code (IaC) is used for environment creation and modification. Furthermore, in order to simplify the provisioning of new cloud resources and provide default configurations, infrastructure templates are available in a centralized repository, called the [Resource Library (RL)](https://github.com/Dow/devops/blob/master/README.md#resource-library). This a version control repository where IaC templates are stored. The templates are primarily developed and provided by the Platform team and go through rigorous infrastructure testing before making them available for use to development teams.
+In order to ensure reusability and consistency across environments and projects, Infrastructure as Code (IaC) is used for environment creation and modification. Furthermore, in order to simplify the provisioning of new cloud resources and provide default configurations, infrastructure templates are available in a centralized repository, called the [Resource Library (RL)](https://github.com/Dow/devops/blob/master/README.md#resource-library). This is a version control repository where IaC templates are stored. The templates are primarily developed and provided by the Platform team and go through rigorous infrastructure testing before making them available for use to development teams.
 The following integration pipeline is used for publishing IaC templates:
 ![IaC Build Process](images/devops-overview/iac-build-process.png)
  
