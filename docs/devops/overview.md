@@ -45,7 +45,7 @@ The following list summarizes the different teams and roles that occur in this d
 - Architecture Canvas and Technical Design reviews
 - Initial sprint and capacity planning
 
-Teams should not be starting any “meaningful” development, including provisioning cloud resources, before reviewing and executing these processes. Testing/evaluating a project's design in an Azure sandbox environment is acceptable and encouraged.
+Teams should not be starting any “meaningful” development, including provisioning cloud resources, before reviewing and executing these processes. An exception here is the testing/evaluation of a project's design in an Azure sandbox environment, which is acceptable and even encouraged.
 
 ### Project Startup Phase
 The project startup phase typically takes place in Sprint 0. This phase typically includes the following steps:
