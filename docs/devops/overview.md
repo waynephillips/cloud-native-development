@@ -16,7 +16,8 @@ The following list summarizes the different teams and roles that occur in this d
     - Final approver prior to Production deployments in Continuous Delivery Pipeline
 - Lead developer
     - Manages appropriate tasks/deliverables for the project
-    - Oversees delivery of project backlog items
+    - Oversees delivery of features being developed in a sprint
+    - Other responsibilities listed for Dev team
 - Dev team - Development team
     - Develop features laid out in a sprint
     - Update AS and Lead developer on progress in stand up meetings
