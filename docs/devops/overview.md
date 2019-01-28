@@ -7,11 +7,33 @@ For more information on the actual implementation of the different items describ
 
 ## Roles
 The following list summarizes the different teams and roles that occur in this document:
-- AS – Architecture Specialist
-- Platform team - Cloud Operations team
-- Dev team - Development team
+- Architecture Specialist (AS)
+    - Manages appropriate tasks/deliverables for the project
+    - Manages product reviews with stakeholders
+- Platform Team
+    - Oversees cloud operations and DevOps automation
+    - Assists dev teams with DevOps, automation and cloud infrastructure
+    - Primary contributor to developing and maintaining DevOps cloud infrastructure templates and automation tools
+    - Final approver prior to Production deployments in Continuous Delivery Pipeline
 - Lead developer
-- Security Solution Specialist - Security expert embedded at a specific DMC location
+    - Manages appropriate tasks/deliverables for the project
+    - Oversees delivery of features being developed in a sprint
+    - Other responsibilities listed for Dev team
+- Dev team
+    - Development team
+    - Develop features laid out in a sprint
+    - Update AS and Lead developer on progress in stand up meetings
+    - Empowered to provision resources and manage builds/deployments using DevOps automation
+- DMC Tech Architecture Team
+    - Assists with architecture reviews and guidance for solution designs
+    - Reviews targeted frameworks, supported automation tools and cloud infrastructure components on a regular basis and makes decision on adding new ones
+    - Members: Lead developers, Architecture Specialists, Platform team
+- Security Solution Specialist
+    - Security expert embedded at a specific DMC location
+    - Assists teams with security-related project deliverables, such as Security Risk Management process, Risk Profile meeting, etc.
+    - Ensures appropriate access level for team members, applications, automation tools, etc.
+- TCS Support team - Tata Consulting Services support team
+    - Handles production support in general
 
 ## Project Workflow
 ![Software Development Phases](images/devops-overview/software-dev-phases.png)
@@ -19,8 +41,11 @@ The following list summarizes the different teams and roles that occur in this d
 - AS defines product requirements with business partner
 
 ### Project Planning
+- Project is shaped and assigned to the appropriate AS and Lead Developer/Team
 - Architecture Canvas and Technical Design reviews
 - Initial sprint and capacity planning
+
+Teams should not be starting any “meaningful” development, including provisioning cloud resources, before reviewing and executing these processes. An exception here can be the testing/evaluation of a project's design in an Azure sandbox environment, which is acceptable and encouraged.
 
 ### Project Startup Phase
 The project startup phase typically takes place in Sprint 0. This phase typically includes the following steps:
@@ -43,7 +68,7 @@ The software development process is described in the following diagram:
 ![Software Development Cycle](images/devops-overview/software-dev-cycle.png)
 
 ### Production Support
-TBD
+Primarily handled by TCS Support team
 
 ## DevOps
 
@@ -84,7 +109,7 @@ Note that a project repository includes not only the application code but also a
 ### Infrastructure as Code
 
 #### Resource Library
-In order to ensure reusability and consistency across environments and projects, Infrastructure as Code (IaC) is used for environment creation and modification. Furthermore, in order to simplify the provisioning of new cloud resources and provide default configurations, infrastructure templates are available in a centralized repository, called the [Resource Library (RL)](https://github.com/Dow/devops/blob/master/README.md#resource-library). This a version control repository where IaC templates are stored. The templates are primarily developed and provided by the Platform team and go through rigorous infrastructure testing before making them available for use to development teams.
+In order to ensure reusability and consistency across environments and projects, Infrastructure as Code (IaC) is used for environment creation and modification. Furthermore, in order to simplify the provisioning of new cloud resources and provide default configurations, infrastructure templates are available in a centralized repository, called the [Resource Library (RL)](https://github.com/Dow/devops/blob/master/README.md#resource-library). This is a version control repository where IaC templates are stored. The templates are primarily developed and provided by the Platform team and go through rigorous infrastructure testing before making them available for use to development teams.
 The following integration pipeline is used for publishing IaC templates:
 ![IaC Build Process](images/devops-overview/iac-build-process.png)
  
