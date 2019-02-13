@@ -2,12 +2,11 @@
 Param(
 	[string] $ResourceGroupName = $env:ResourceGroupName,
 	[string] $AppServiceName = $env:AppServiceName,
-    [string] $AadTenantId = $env:TenantId,
-    [string] $RegistrationSecret = $env:ClientSecret,
-    [string] $RegistrationId = $env:RegistrationId
-
-    
+    	[string] $AadTenantId = $env:TenantId,
+    	[string] $RegistrationSecret = $env:ClientSecret,
+    	[string] $RegistrationId = $env:RegistrationId 
 )
+
 if(!$ResourceGroupName)
 {
 	throw "ResourceGroupName is null or empty."
@@ -42,7 +41,7 @@ $AppAuthSettingsResource = Invoke-AzureRmResourceAction `
 		-ResourceName "$($AppService.Name)/authsettings" `
 		-Action list `
 		-ApiVersion 2016-08-01 `
-        -Force
+        	-Force
 
 $PropertiesObject = $AppAuthSettingsResource.Properties
 # Adjust properties
