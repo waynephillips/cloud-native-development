@@ -129,7 +129,16 @@ To combine different infrastructure templates and thereby define custom infrastr
 The following workflow describes the approval process during release in more detail:
 ![Approval Steps](images/devops-overview/approval-stages.png)
 
-Note the difference between post-approval performed by AS in the Test stage and the pre-approval done by the Platform team before deploying to production. Post-approval in Test is not used simply as a trigger for production deployments. A post-approval indicates that stakeholders approved the changes. Any production deployments must be approved by the Platform team.
+Highlights:
+
+1. **CI/CD trigger on app build**: Triggers an automatic deployment to Dev as an integration environment for developers/project team review.
+1. **Test pre-approval**: Performed by the current development team when they agree that the code is ready to deploy to Test.
+1. **Test post-approval**: Performed by a project Stakeholder (or representative such as the AS) to either:
+   - **approve** that the changes are good enough to deploy to production, or 
+   - **reject** the changes to indicate we do not want to move the changes to Production
+  
+   **Important Note:** One of the actions above needs to be performed to allow the next package to be deployed to Test, because a pending post-approval indicates that stakeholders may be actively reviewing the application.
+1. **Prod pre-approval**: Performed by the Platform Team (non-developer) to begin against the Production environment.
 
 ### Tools in Use
 
