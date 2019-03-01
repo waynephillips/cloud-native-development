@@ -10,9 +10,9 @@ The following list summarizes the different teams and roles that occur in this d
 - Architecture Specialist (AS)
     - Manages appropriate tasks/deliverables for the project
     - Manages product reviews with stakeholders
-- Platform Team
+- DMC Platform Team
     - Oversees cloud operations and DevOps automation
-    - Assists dev teams with DevOps, automation and cloud infrastructure
+    - Provides guidance to dev teams around DevOps, automation and the cloud
     - Primary contributor to developing and maintaining DevOps cloud infrastructure templates and automation tools
     - Final approver prior to Production deployments in Continuous Delivery Pipeline
 - Lead developer
@@ -81,9 +81,20 @@ DevOps is the union of people, process, and tools to enable continuous delivery 
 Continuous Integration (CI) is a development practice that requires developers to integrate code into a shared repository several times a day. Each check-in is then verified by an automated build, allowing teams to detect problems early.
 
 #### Continuous Delivery
-Continuous delivery is a series of practices designed to ensure that code can be rapidly and safely deployed to production by delivering every change to a production-like environment and ensuring business applications and services function as expected through automated testing. Since every change is delivered to a staging environment using complete automation, you can have confidence the application can be deployed to production with a push of a button when the business is ready.
+Continuous delivery (CD) is a series of practices designed to ensure that code can be rapidly and safely deployed to production by delivering every change to a production-like environment and ensuring business applications and services function as expected through automated testing. Since every change is delivered to a staging environment using complete automation, you can have confidence the application can be deployed to production with a push of a button when the business is ready.
 
-### Environments
+### DevOps - People
+People are the first and most important piece in a DevOps ecosystem. The following chart shows the teams directly involved in the 1DMC DevOps with their responsibilities and relationships from a DevOps standpoint:
+![DevOps People](images/devops-overview/devops-people.PNG)
+Development teams are empowered to provision and configure complete cloud infrastructures using infrastructure as code. They leverage the shared tools designed and primarily developed by the DMC Platform team to continuously deliver code and infrastructure updates to the end customer.
+
+It is the development team that sets up new projects (typically in Sprint 0) including infrastructure and pipeline configurations. The Platform team provides guidance to development teams around Continuous Delivery, cloud configurations and DevOps in general whenever necessary.
+ 
+In addition, whenever technical limitations arise (for example, something cannot be automated), a request for manual configuration is sent from the development team to the DMC Platform team. The Platfrom team makes sure that the right configurations are in place for Test and Production environments in that scenario.
+
+### DevOps - Process
+
+#### Environments
 ![Environments](images/devops-overview/environments.png)
 
 A Sandbox environment is not part of any official DevOps pipeline and is used for Proof of Concepts (PoC) and experiments only.
@@ -94,42 +105,41 @@ A Test environment is used to review application updates with internal/external 
 
 A Prod environment is where the live application resides.
 
-Dev, Test and Prod environments typically have the same architectures with similar configurations, ensuring consistency across environments and thereby increasing the number of successful production deployments.
+Dev, Test and Prod environments typically have the same architectures with similar configurations, ensuring consistency across environments and thereby increasing the number of successful production deployments. This level of consistency is achieved by using infrastructure automation and Continuous Delivery described in more detail in the upcoming sections.
 
-### Application Delivery Pipeline
-The following diagram describes the application delivery workflow from end to end:
-![Application Delivery Pipeline](images/devops-overview/app-delivery-pipeline.png)
- 
-In the Continuous Integration (CI) phase, a developer applies changes to the code base on a feature branch and initiates a pull request (PR). Code validation and testing is triggered automatically as part of the PR. Merging to the Master branch kicks off further validation and testing and eventually publishes the necessary files for deployments. It is recommended that one create a PR early on in the feature development process so that others can provide timely feedback on the implementation details.
-
-The Continuous Delivery (CD) phase is automatically triggered after the publishing step from CI is complete. The published artifact is first deployed to a Development (Dev) environment. The development team can send the code update further to the Test environment once the application state is ready for review by the AS and typically one or more business partners. Once the AS and the Platform team approve the changes present in Test, they are automatically deployed to production.
-
-Note that a project repository includes not only the application code but also all necessary infrastructure configurations by leveraging Infrastructure as Code (IaC). More on this in the [Infrastructure as Code](#Infrastructure-as-Code) section.
-
-### Infrastructure as Code
-
-#### Resource Library
-In order to ensure reusability and consistency across environments and projects, Infrastructure as Code (IaC) is used for environment creation and modification. Furthermore, in order to simplify the provisioning of new cloud resources and provide default configurations, infrastructure templates are available in a centralized repository, called the [Resource Library (RL)](https://github.com/Dow/devops/blob/master/README.md#resource-library). This is a version control repository where IaC templates are stored. The templates are primarily developed and provided by the Platform team and go through rigorous infrastructure testing before making them available for use to development teams.
-The following integration pipeline is used for publishing IaC templates:
-![IaC Build Process](images/devops-overview/iac-build-process.png)
- 
-#### Application Repository
-Application projects often need custom modifications and updates in infrastructure configuration. In order to enable for this scenario, project-specific configurations are stored in the application repository in the form of scripts. The following diagram shows the individual steps included for CI from an application repository:
-![Application CI Process](images/devops-overview/app-ci-process.PNG)
-
-#### All Together: CI/CD and IaC
-The following diagram illustrates the CI/CD workflow combined with IaC:
+#### Continuous Delivery
+The following diagram illustrates the Continuous Delivery workflow including infrastructure automation:
 ![CI/CD with IaC](images/devops-overview/ci-cd-iac.png)
 
-Note the two different version control sources. The app repository includes both the application code base and Configuration-as-Code (CaC) scripts. The list of IaC templates in use is defined in an Azure DevOps release pipeline along with any other deployment steps. The CD pipeline is the same as the one introduced in the [Application Delivery Pipeline](#Application-Delivery-Pipeline) section.
+Infrastucture and application code originate from two main version control sources: The shared Resource Library and a project repository specific to the solution. The Resource Library includes shared infrastructure templates that are maintained and published by the DMC Platform team. These templates are used and combined by a development team in the release pipeline of a project to implement custom cloud architectures. In addition to the Resource Library, development teams set up a project repository that includes the application code base and any custom infrastructure-related configurations that cannot be applied simply using infrastructure templates.
 
-To combine different infrastructure templates and thereby define custom infrastructures, i.e. cloud architectures, Azure DevOps is used as a DevOps automation tool. Leveraging Azure DevOps, one can quickly define the right combination of IaC templates.
+Both the Resource Library templates and the application code base undergo a code review, build and test process before getting published, i.e., made available, for deployments. Application code and configuration code changes originating from the project repository are delivered automatically to a Dev environment and can be manually sent further by the development team in a Continuous Delivery (CD) process. In contrast to application or configuration code deployments, changes related to infrastructure templates need to be triggered manually and can be sent further in the same CD pipeline as the one used for application and configuration updates.
+
+#### Project Repository: Branching Strategy, Continuous Integration and Continuous Delivery
+The following diagram describes the end-to-end CI/CD process for a project repository:
+![Application Delivery Pipeline](images/devops-overview/app-delivery-pipeline.png)
+
+A project repository includes the application code along with any custom infrastructure configurations using a scripting language. In the Continuous Integration (CI) phase, a developer applies changes to the code base and/or infrastructure configurations on a feature branch and initiates a pull request (PR), i.e., peer review. Code validation and testing is triggered automatically as part of the PR. Testing includes a mandatory static code analysis test and any code-related unit and integration testing. Merging to Master branch requires an approval by at least another developer and successful code analysis and unit/integration tests. After merging, further validation and testing kick off and the necessary artifacts eventually get published for deployments. It is recommended that one create a PR early on in the feature development process so that others can provide timely feedback on the implementation details.
+
+The Continuous Delivery (CD) phase is automatically triggered after the publishing step from CI is complete. The published artifact is first deployed to a Development (Dev) environment. The development team can decide to send the code or configuration update further to the Test environment once the changes are ready for review by the AS and typically one or more business partners. Once the AS and the Platform team approve the changes present in Test, they are automatically deployed to production.
+
+The following diagram elaborates the CI pipeline for a project repository in some more detail:
+![Application CI Process](images/devops-overview/app-ci-process.PNG)
+
+The Resource Library uses the same branching strategy as the one described in the [previous section](#project-repository-branching-strategy-continuous-integration-and-continuous-delivery). Anyone having access to the repository can contribute to it. A code review by the DMC Platform team is mandatory and all infrastructure tests must succeed in addition. 
+
+#### Resource Library: Branching Strategy, Continuous Integration and Publishing
+
+In order to ensure reusability and consistency across environments and projects, Infrastructure as Code (IaC) is used for environment creation and modification. Furthermore, in order to simplify the provisioning of new cloud resources and provide default configurations, infrastructure templates are available originating from a centralized repository, called the [Resource Library (RL)](https://github.com/Dow/devops/blob/master/README.md#resource-library). This is a version control repository where IaC templates are stored. The templates are primarily developed and provided by the Platform team and go through rigorous infrastructure testing before making them available for use to development teams. These infrastructure templates are published by the DMC Platform team in Azure DevOps in the form of artifacts. A development team can combine these artifacts to implement custom cloud infrastructures required for their project in an Azure DevOps release pipeline.
+
+The following integration pipeline is used for publishing IaC templates:
+![IaC Build Process](images/devops-overview/iac-build-process.png)
 
 #### More on Approval Steps
 The following workflow describes the approval process during release in more detail:
 ![Approval Steps](images/devops-overview/approval-stages.png)
 
-Highlights:
+**Highlights:**
 
 1. **CI/CD trigger on app build**: Triggers an automatic deployment to Dev as an integration environment for developers/project team review.
 1. **Test pre-approval**: Performed by the current development team when they agree that the code is ready to deploy to Test.
@@ -140,7 +150,7 @@ Highlights:
    **Important Note:** One of the actions above needs to be performed to allow the next package to be deployed to Test, because a pending post-approval indicates that stakeholders may be actively reviewing the application.
 1. **Prod pre-approval**: Performed by the Platform Team (non-developer) to begin against the Production environment.
 
-### Tools in Use
+### DevOps - Tools
 
 #### Primary Technology Stack
 - Azure cloud (PaaS) – Cloud
@@ -152,7 +162,7 @@ Highlights:
 - Checkmarx – Static Code Scan Analysis
 - Azure ARM templates – IaC
     For more information on currently supported Azure cloud resources, visit the [Resource Library documentation](https://github.com/Dow/devops/blob/master/README.md#resource-library)
-- Azure Powershell – IaC and CaC
+- Azure Powershell – IaC and CaC scripting
 
 ## Security
 ### DevOps Security
